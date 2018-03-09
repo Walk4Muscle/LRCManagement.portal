@@ -1,0 +1,98 @@
+<mat-toolbar class="sub-toolbar z-depth-1">
+  Case List
+</mat-toolbar>
+<mat-divider [inset]="true"></mat-divider>
+
+<div fxLayout="row" fxLayoutAlign="center" class="wapper">
+  <mat-card class="bulletin" fxFlex>
+    <mat-card-title>
+      Table
+    </mat-card-title>
+
+    <!-- query -->
+    <mat-expansion-panel class="query-panel">
+      <mat-expansion-panel-header [expandedHeight]="'48px'">
+        <mat-panel-title>
+          Query
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput [matDatepicker]="frompicker" placeholder="From">
+        <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
+        <mat-datepicker #frompicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="topicker" placeholder="To">
+        <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
+        <mat-datepicker #topicker></mat-datepicker>
+      </mat-form-field>
+      <button mat-icon-button color="primary">
+        <mat-icon>find_in_page</mat-icon>
+      </button>
+    </mat-expansion-panel>
+    <mat-divider [inset]="true"></mat-divider>
+
+    <div class="filter">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="case_number">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.case_number}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef> PES Product Family Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="owner">
+        <mat-header-cell *matHeaderCellDef> Owner </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.owner}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SR_wait_state">
+        <mat-header-cell *matHeaderCellDef> SR Wait State </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.SR_wait_state}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SR_type">
+        <mat-header-cell *matHeaderCellDef> SR Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.SR_type}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="update_sme">
+        <mat-header-cell *matHeaderCellDef> Update Date By SME </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.update_sme}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="operation">
+        <mat-header-cell *matHeaderCellDef> Operation </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button matLine routerLink="1" >
+              <mat-icon class="green-text">assignment</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+                <mat-icon>question_answer</mat-icon>
+              </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+</div>

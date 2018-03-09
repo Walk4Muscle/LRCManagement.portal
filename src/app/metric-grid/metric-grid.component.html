@@ -1,0 +1,119 @@
+<mat-grid-list cols="10" gutterSize="3px">
+  <!-- <mat-grid-tile [colspan]=2 [rowspan]=3 class="yellow darken-1">
+      <mat-grid-tile-footer>
+        Current Labor
+      </mat-grid-tile-footer>
+      <h4>75%</h4>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=3 class="green accent-4">
+      <mat-grid-tile-footer>
+        Current Feedback
+      </mat-grid-tile-footer>
+      <h4>100% TB</h4>
+    </mat-grid-tile> -->
+  <mat-grid-tile [colspan]=6 [rowspan]=1 class="blue darken-1">
+    <mat-grid-tile-footer>
+      Idle Case Volume
+    </mat-grid-tile-footer>
+    <h3>
+      <metric-tile type="idle" category="total"></metric-tile>
+    </h3>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=4 [rowspan]=1 class="orange darken-1">
+    <mat-grid-tile-footer>
+      Long Running Case Volume
+    </mat-grid-tile-footer>
+    <h3>
+      <metric-tile type="longrunning" category="total"></metric-tile>
+    </h3>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=4 [rowspan]=1 class="amber lighten-1">
+    <mat-grid-tile-footer>
+      Pending
+    </mat-grid-tile-footer>
+    <h3>
+      <metric-tile type="idle" category="pending"></metric-tile>
+    </h3>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=2 [rowspan]=1 class="green lighten-1">
+    <mat-grid-tile-footer>
+      Solution Delivered
+    </mat-grid-tile-footer>
+    <h3>
+      <metric-tile type="idle" category="solutiondelivered"></metric-tile>
+    </h3>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=2 class="red accent-1">
+    <mat-grid-tile-footer>
+      >60 Days
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="longrunning" category="60days"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=2 class="red accent-2">
+    <mat-grid-tile-footer>
+      >180 min
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="longrunning" category="800mins"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=2 [rowspan]=2 class="red accent-3">
+    <mat-grid-tile-footer>
+      >60 Days + >180 min
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="longrunning" category="60days800mins"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="amber darken-1">
+    <mat-grid-tile-footer>
+      Pending CTS
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="pendingcts"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="amber darken-2">
+    <mat-grid-tile-footer>
+      Pending Customer
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="pendingcustomer"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="amber darken-3">
+    <mat-grid-tile-footer>
+      Pending Development
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="pendingdevelopment"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="amber accent-1">
+    <mat-grid-tile-footer>
+      Situation Mitigated - Pending
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="situationmitigatedpending"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="green accent-1">
+    <mat-grid-tile-footer>
+      Solution Delivered - Solution
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="solutiondeliveredsolution"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]=1 [rowspan]=1 class="green accent-2">
+    <mat-grid-tile-footer>
+      Solution Delivered Pending Confirmation
+    </mat-grid-tile-footer>
+    <h4>
+      <metric-tile type="idle" category="solutiondeliveredpendingconfirmation"></metric-tile>
+    </h4>
+  </mat-grid-tile>
+
+</mat-grid-list>

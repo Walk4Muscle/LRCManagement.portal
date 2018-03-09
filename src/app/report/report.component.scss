@@ -1,0 +1,98 @@
+@import '~materialize-css/sass/components/color';
+// @import '~materialize-css/sass/components/_variables.scss';
+@import 'src/styles.scss';
+.query-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: $ms-blue;
+    }
+    border-top: 3px solid;
+    border-color: $ms-blue;
+    background-color: color("blue", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("blue", "lighten-5") !important;
+    }
+  }
+}
+
+.volume-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("green", "base");
+    }
+    border-top: 3px solid;
+    border-color: color("green", "base");
+    background-color: color("green", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("green", "lighten-5") !important;
+    }
+  }
+}
+
+.volume-distribution-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("teal", "darken-1");
+    }
+    border-top: 3px solid;
+    border-color: color("teal", "darken-1");
+    background-color: color("teal", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("teal", "lighten-5") !important;
+    }
+  }
+}
+
+.close-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("deep-purple", "darken-1");
+    }
+    border-top: 3px solid;
+    border-color: color("deep-purple", "darken-1");
+    background-color: color("deep-purple", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("deep-purple", "lighten-5") !important;
+    }
+  }
+}
+
+.labor-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("red", "darken-1");
+    }
+    border-top: 3px solid;
+    border-color: color("red", "darken-1");
+    background-color: color("red", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("red", "lighten-5") !important;
+    }
+  }
+}
+
+.labor-distribution-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("orange", "darken-1");
+    }
+    border-top: 3px solid;
+    border-color: color("orange", "darken-1");
+    background-color: color("orange", "lighten-5");
+    font-weight: bolder;
+    &:hover {
+      background-color: color("orange", "lighten-5") !important;
+    }
+  }
+}

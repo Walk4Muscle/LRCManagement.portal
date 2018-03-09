@@ -1,0 +1,57 @@
+<mat-toolbar class="sub-toolbar z-depth-1">
+  Case List
+  <mat-icon>chevron_right</mat-icon>
+  Case: 117051515737349
+</mat-toolbar>
+<mat-divider [inset]="true"></mat-divider>
+
+<div class="wapper">
+  <mat-card>
+    <mat-card-title>
+      IE11 crash
+    </mat-card-title>
+    <mat-card-subtitle>
+      <span>
+        117051515737349
+      </span>
+      <button mat-button color="primary">
+        <mat-icon>code</mat-icon>
+        [Internet Explorer]
+      </button>
+      <button mat-button color="accent">
+        <mat-icon>account_circle</mat-icon>
+        [YEJXU]
+      </button>
+    </mat-card-subtitle>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content>
+      <mat-list dense>
+        <mat-list-item fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <span fxFlex="15">SRWaitState</span>
+          <span fxFlex="85">
+            <button mat-button>
+              Pending Development
+            </button>
+          </span>
+        </mat-list-item>
+        <mat-list-item fxLayout="row" fxLayoutWrap fxLayoutAlign="start ">
+          <span fxFlex="15">SRType</span>
+          <span fxFlex>
+            <button mat-button>
+              Incident
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-divider [inset]="true"></mat-divider>
+    <!-- note list -->
+    <note-list></note-list>
+    <mat-card-actions>
+      <button mat-icon-button (click)="backClicked()">
+        <mat-icon>undo</mat-icon>
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

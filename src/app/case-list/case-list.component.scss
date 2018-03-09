@@ -1,0 +1,45 @@
+@import '~materialize-css/sass/components/color';
+// @import '~materialize-css/sass/components/_variables.scss';
+@import 'src/styles.scss';
+.bulletin {
+  padding: 0;
+  border-top: 3px solid;
+  border-color: $ms-blue;
+  .mat-card-title {
+    padding: 8px 24px;
+    margin-bottom: 0;
+    background-color: color("blue", "lighten-5");
+    font-size: 18px;
+    font-weight: bolder;
+    color: $ms-blue;
+  }
+  .mat-card-content {
+    padding: 24px;
+  }
+  .mat-card-actions {
+    margin: 0;
+    padding: 8px;
+  }
+}
+
+.query-panel {
+  mat-expansion-panel-header {
+    mat-panel-title {
+      flex-grow: 0;
+      color: color("light-blue", "darken-1");
+    }
+    font-weight: bolder;
+    &:hover {
+      background-color: rgba($color: color("blue", "lighten-5"), $alpha: 0.54) !important;
+    }
+  }
+  box-shadow: none !important;
+}
+
+.filter {
+  min-height: 64px;
+  padding: 8px 24px 0;
+  mat-form-field {
+    width: 100%
+  }
+}

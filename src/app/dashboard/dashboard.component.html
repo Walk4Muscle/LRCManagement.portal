@@ -1,0 +1,118 @@
+<mat-toolbar class="sub-toolbar z-depth-1">
+  Dashboard
+</mat-toolbar>
+<mat-divider [inset]="true"></mat-divider>
+<!-- Bulletin -->
+<div fxLayout="row" fxLayoutAlign="center" class="wapper">
+  <mat-card class="bulletin" fxFlex>
+    <mat-card-title>
+      Bulletin
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <p>
+        Hello World
+      </p>
+      <span class="right">Posted at: 2018/2/5</span>
+    </mat-card-content>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-actions align="end">
+      <a mat-icon-button routerLink="/dashboard" color="primary">
+        <mat-icon>open_in_new</mat-icon>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- metrics tiles -->
+<div fxLayout="row" fxLayoutAlign="center" class="wapper">
+  <metric-grid fxFlex></metric-grid>
+</div>
+<!-- charts -->
+<div fxLayout="row" fxLayoutAlign="center" class="wapper">
+  <mat-expansion-panel fxFlex class="general-volume-panel" expanded="true">
+    <mat-expansion-panel-header [expandedHeight]="'48px'">
+      Current Status
+    </mat-expansion-panel-header>
+    <mat-tab-group>
+      <mat-tab label="Idle Case (Product)">
+        <volume-trend-chart type="idle" [title]="'Idle Case (Product)'" by="product"></volume-trend-chart>
+        <!-- <volume-trend-queue-demo></volume-trend-queue-demo> -->
+      </mat-tab>
+      <mat-tab label="Idle Case (SE)">
+        <volume-trend-chart type="idle" [title]="'Idle Case (SE)'" by="se"></volume-trend-chart>
+        <!-- <volume-trend-engineer-demo></volume-trend-engineer-demo> -->
+      </mat-tab>
+      <mat-tab label="Long Running Case (Product)">
+        <volume-trend-chart type="longrunning" [title]="'Long Running Case (Product)'" by="product"></volume-trend-chart>
+        <!-- <volume-distribution-queue-demo></volume-distribution-queue-demo> -->
+      </mat-tab>
+      <mat-tab label="Long Running Case (SE)">
+        <volume-trend-chart type="longrunning" [title]="'Long Running Case (SE)'" by="se"></volume-trend-chart>
+        <!-- <labor-trend-queue-demo></labor-trend-queue-demo> -->
+      </mat-tab>
+    </mat-tab-group>
+    <mat-action-row>
+      <a mat-icon-button routerLink="/report" color="primary">
+        <mat-icon>open_in_new</mat-icon>
+      </a>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>
+
+<!-- case list -->
+<div fxLayout="row" fxLayoutAlign="center" class="wapper">
+  <mat-expansion-panel fxFlex class="sr-list-panel" expanded="true">
+    <mat-expansion-panel-header [expandedHeight]="'48px'">
+      Latest SR Cases
+    </mat-expansion-panel-header>
+    <mat-table #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="case_number">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.case_number}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="PES_product_family_name">
+        <mat-header-cell *matHeaderCellDef> PES Product Family Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.PES_product_family_name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="owner">
+        <mat-header-cell *matHeaderCellDef> Owner </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.owner}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SR_wait_state">
+        <mat-header-cell *matHeaderCellDef> SR Wait State </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.SR_wait_state}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SR_type">
+        <mat-header-cell *matHeaderCellDef> SR Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.SR_type}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="update_sme">
+        <mat-header-cell *matHeaderCellDef> Update Date By SME </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.update_sme}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-action-row>
+      <a mat-icon-button routerLink="/case" color="primary">
+        <mat-icon>open_in_new</mat-icon>
+      </a>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

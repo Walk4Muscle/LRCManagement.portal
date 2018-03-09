@@ -1,0 +1,41 @@
+@import '~materialize-css/sass/components/color';
+::ng-deep .mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content {
+  width: 99vw;
+  max-width: 100%;
+}
+
+mat-list {
+  .mat-list-item {
+    .mat-list-item-content {
+      span {
+        min-width: 70px;
+      }
+    }
+  }
+}
+
+.note-history {
+  mat-list-item {
+    .user {
+      font-weight: bolder;
+      margin-right: 5px;
+    }
+    .time {
+      color: color("blue-grey", "darken-2");
+      font-size: 12px;
+      line-height: 12px;
+    }
+    .comment{
+      font-size: 18px;
+      padding:5px;
+      margin: 5px 0;
+    }
+  }
+  mat-list-item.sme {
+    background: rgba($color: color("orange","accent-2"), $alpha: 0.18);
+  }
+  mat-list-item.se {
+    background: rgba($color: color("light-blue","accent-1"), $alpha: 0.18);
+  }
+}

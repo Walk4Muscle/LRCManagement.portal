@@ -1,0 +1,107 @@
+<mat-toolbar class="sub-toolbar z-depth-1">
+  Chart Report
+</mat-toolbar>
+<mat-divider [inset]="true"></mat-divider>
+
+
+<mat-expansion-panel class="query-panel" expanded="true">
+  <mat-expansion-panel-header [expandedHeight]="'48px'">
+    <mat-panel-title>
+      Query
+    </mat-panel-title>
+    <mat-panel-description>
+      Filter
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <input matInput [matDatepicker]="frompicker" placeholder="From">
+    <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
+    <mat-datepicker #frompicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="topicker" placeholder="To">
+    <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
+    <mat-datepicker #topicker></mat-datepicker>
+  </mat-form-field>
+  <button mat-icon-button color="primary">
+    <mat-icon>find_in_page</mat-icon>
+  </button>
+  <!-- <mat-action-row>
+      <a mat-icon-button routerLink="dashboard" color="primary">
+        <mat-icon>open_in_new</mat-icon>
+      </a>
+    </mat-action-row> -->
+</mat-expansion-panel>
+
+<div class="wapper">
+  <mat-expansion-panel class="volume-panel" expanded="true">
+    <mat-expansion-panel-header [expandedHeight]="'48px'">
+      <mat-panel-title>
+        Volume Trend Charts
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-tab-group>
+      <mat-tab label="monthly"></mat-tab>
+      <mat-tab label="weekly"></mat-tab>
+    </mat-tab-group>
+    <volume-trend-queue-demo></volume-trend-queue-demo>
+    <volume-trend-engineer-demo></volume-trend-engineer-demo>
+  </mat-expansion-panel>
+</div>
+
+<div class="wapper">
+  <mat-expansion-panel class="volume-distribution-panel" expanded="true">
+    <mat-expansion-panel-header [expandedHeight]="'48px'">
+      <mat-panel-title>
+        Volume Distribution Trend Charts
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div fxLayout="row" fxLayoutWrap fxLayoutAlign="center center">
+      <volume-distribution-queue-demo fxFlex="50"></volume-distribution-queue-demo>
+      <volume-distribution-eng-demo fxFlex="50"></volume-distribution-eng-demo>
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="wapper">
+    <mat-expansion-panel class="close-panel" expanded="true">
+      <mat-expansion-panel-header [expandedHeight]="'48px'">
+        <mat-panel-title>
+          Close Ratio Trend Charts
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-tab-group>
+        <mat-tab label="monthly"></mat-tab>
+        <mat-tab label="weekly"></mat-tab>
+      </mat-tab-group>
+      <ratio-trend-queue-demo></ratio-trend-queue-demo>
+      <ratio-trend-eng-demo></ratio-trend-eng-demo>
+    </mat-expansion-panel>
+  </div>
+
+  <div class="wapper">
+      <mat-expansion-panel class="labor-panel" expanded="true">
+        <mat-expansion-panel-header [expandedHeight]="'48px'">
+          <mat-panel-title>
+            Labor Trend Charts
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-tab-group>
+          <mat-tab label="monthly"></mat-tab>
+          <mat-tab label="weekly"></mat-tab>
+        </mat-tab-group>
+        <labor-trend-queue-demo></labor-trend-queue-demo>
+        <labor-trend-engineer-demo></labor-trend-engineer-demo>
+      </mat-expansion-panel>
+    </div>
+
+    <div class="wapper">
+        <mat-expansion-panel class="labor-distribution-panel" expanded="true">
+          <mat-expansion-panel-header [expandedHeight]="'48px'">
+            <mat-panel-title>
+              Labor Trend Charts
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ut-distribution-demo></ut-distribution-demo>
+        </mat-expansion-panel>
+      </div>

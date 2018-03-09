@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
+
+@import '~@angular/material/theming';
+// Import your custom theme
+@import 'src/app.theme.scss';
+@import '~materialize-css/sass/components/color';
+@import '~materialize-css/sass/components/variables';
+@import '~materialize-css/sass/components/typography';
+@import '~materialize-css/sass/components/global';
+
+$ms-blue : #1E88E5;
+$ms-red :#E53935;
+$ms-green: #00C853;
+$ms-yellow: #fdd835;
+
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.sub-toolbar {
+  height: 48px !important;
+  background-color: mat-color($mat-blue, A100, 0.38) !important;
+  color: mat-color($mat-blue-grey,700) !important;
+}
+
+.wapper{
+  padding: 10px;
+}

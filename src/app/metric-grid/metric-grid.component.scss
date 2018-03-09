@@ -1,0 +1,8 @@
+@import 'src/styles.scss';
+.mat-gird-tile[ng-reflect-rowspan='1'][ng-reflect-colspan='1'] {
+  .mat-grid-tile-footer {
+    .mat-grid-list-text {
+      font-size: 10px !important;
+    }
+  }
+}
